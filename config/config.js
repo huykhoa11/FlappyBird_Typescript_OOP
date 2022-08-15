@@ -1,0 +1,12 @@
+"use strict";
+const GAME_WIDTH = 288;
+const GAME_HEIGHT = 512;
+const GAME_FPS = 40;
+const GAME_SPEED = 1;
+const GAME_GRAVITY = 0.2;
+const FLAP_VELOCITY = 5;
+const y_max = -100;
+const y_min = -220;
+const PIPE_SPACE = 190;
+const PipeWidth = 52;
+const PipeHeight = 320;
