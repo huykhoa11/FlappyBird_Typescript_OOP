@@ -18,7 +18,7 @@ class Game {
         canvas.addEventListener('click', () => {
             this.bird.image.src = './assets/img/redbird-upflap.png';
             this.bird.flap();
-            setTimeout(() => this.bird.image.src = './assets/img/redbird-downflap.png', 200);
+            setTimeout(() => { this.bird.image.src = './assets/img/redbird-downflap.png'; }, 200);
         });
     }
     setBird(bird) {
@@ -51,7 +51,9 @@ class Game {
         const pipe2_Y = this.pipe2.position.y;
         const base_Y = this.base.position.y;
         if (birdX > pipe1_X - 36 && birdX < pipe1_X + PipeWidth && birdY > pipe1_Y && birdY < pipe1_Y + PipeHeight ||
-            birdX > pipe2_X - 36 && birdX < pipe2_X + PipeWidth && birdY > pipe2_Y && birdY < pipe2_Y + PipeHeight) {
+            birdX > pipe1_X - 36 && birdX < pipe1_X + PipeWidth && birdY > pipe1_Y + PipeHeight + 125 && birdY < pipe1_Y + PipeHeight + PipeHeight + 125 ||
+            birdX > pipe2_X - 36 && birdX < pipe2_X + PipeWidth && birdY > pipe2_Y && birdY < pipe2_Y + PipeHeight ||
+            birdX > pipe2_X - 36 && birdX < pipe2_X + PipeWidth && birdY > pipe2_Y + PipeHeight + 125 && birdY < pipe2_Y + PipeHeight + PipeHeight + 125) {
             console.log('GAMEOVER COLLISION PIPE');
             this.gameover = true;
         }
